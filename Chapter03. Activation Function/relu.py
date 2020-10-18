@@ -1,12 +1,12 @@
 import numpy as np
 import matplotlib.pylab as plt
 
-def sigmoid_function(x):
-    return 1 / (1 + np.exp(-x) )
+def relu(x):
+    return np.maximum(0, x) 
 
 x = np.arange(-5.0, 5.0, 0.1)
-y = sigmoid_function(x)
+y = relu(x)
 
 plt.plot(x, y)
-plt.ylim(-0.1, 1.1)
+plt.ylim(-0.1, 5.5)
 plt.show()
