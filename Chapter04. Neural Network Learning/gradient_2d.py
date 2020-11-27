@@ -32,11 +32,13 @@ def numerical_gradient(f, X):
 
         return grad
 
+
 def function_2(x):
     if x.ndim == 1:
         return np.sum(x**2)
     else:
         return np.sum(x**2, axis=1)
+
 
 def tangent_line(f, x):
     d = numerical_gradient(f, x)
@@ -45,6 +47,7 @@ def tangent_line(f, x):
     y = f(x) - d*x
 
     return lambda t: d*t + y
+
 
 if __name__ == '__main__':
     x0 = np.arange(-2, 2.5, 0.25)
